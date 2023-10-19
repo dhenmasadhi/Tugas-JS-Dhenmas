@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header
+      class="h-[80px] bg-slate-500 px-12 flex items-center justify-end gap-5"
+    >
+      <div class="text-white" id="username"></div>
+      <div>
+        <img
+          id="img_user"
+          class="h-16 w-16 rounded-full"
+          src=""
+          alt="profile"
+        />
+      </div>
+      <button
+        class="bg-yellow-500 text-white rounded-md px-4 py-2"
+        onclick="onLogout()"
+      >
+        Logout
+      </button>
+    </header>
+
+    <main
+      class="container max-w-full py-5 flex justify-center flex-col items-center bg-slate-800 w-full text-white"
+    >
+      <h1 class="text-2xl py-3">Masukkan Data Barang</h1>
+      <div class="flex flex-row gap-10">
+        <div class="flex flex-col gap-2">
+          <label>Nama Barang</label
+          ><input
+            class="rounded-md px-5 py-2 w-[300px] text-black"
+            type="text"
+            id="nama"
+            placeholder="Nama"
+          />
+          <label>Deskripsi Barang</label
+          ><input
+            class="rounded-md px-5 py-2 w-[300px] text-black"
+            type="text"
+            id="deskripsi"
+            placeholder="Deskripsi "
+          />
+        </div>
+        <div class="flex flex-col gap-2">
+          <label>Harga Barang</label
+          ><input
+            class="rounded-md px-5 py-2 w-[300px] text-black"
+            type="text"
+            id="harga"
+            placeholder="Harga"
+          />
+          <label>Stok Barang</label
+          ><input
+            class="rounded-md px-5 py-2 w-[300px] text-black"
+            type="text"
+            id="stok"
+            placeholder="Stok"
+          />
+        </div>
+      </div>
+      <div class="m-5">
+        <button
+          class="rounded-md bg-green-800 px-5 py-2"
+          id="submit"
+          onclick="addData()"
+        >
+          Tambah Data
+        </button>
+        <button
+          class="rounded-md bg-blue-500 px-5 py-2 hidden"
+          id="update"
+          onclick="addData()"
+        >
+          Update Data
+        </button>
+      </div>
+      <h1 class="text-2xl py-3">Data Barang</h1>
+      <div class="mx-8 mb-32">
+        <table class="border-collapse border border-slate-400" id="crudTabel">
+          <thead>
+            <tr>
+              <th class="border border-slate-300 p-3">Nama Barang</th>
+              <th class="border border-slate-300 p-3">Deskripsi Barang</th>
+              <th class="border border-slate-300 p-3">Harga Barang</th>
+              <th class="border border-slate-300 p-3">Stok Barang</th>
+
+              <th class="border border-slate-300 p-3">Aksi</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </main>
+    <script src="./js/home.js"></script>
+  </body>
+</html>
